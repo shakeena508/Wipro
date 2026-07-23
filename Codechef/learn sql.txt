@@ -1,0 +1,552 @@
+Since you've **completed the entire SQL Beginner Course (120 problems + projects)**, here's a **19-day revision plan**. This plan focuses on revising concepts, practicing queries, and preparing for coding tests and interviews.
+
+---
+
+# SQL 19-Day Revision Plan
+
+## 📅 Day 1 – Getting Started with SQL
+
+### Topics Covered
+
+* What is SQL?
+* Database
+* Table
+* Row & Column
+* Data Types
+* Statements
+* ER Diagram
+* Entities, Attributes, Relationships
+
+### Brief Explanation
+
+**SQL**
+
+* SQL (Structured Query Language) is used to store, retrieve, update, and delete data from databases.
+
+**Database**
+
+* A collection of related tables.
+
+**Table**
+
+* Stores data in rows and columns.
+
+Example
+
+| ID | Name  | Age |
+| -- | ----- | --- |
+| 1  | Rahul | 20  |
+
+**Row**
+
+* One complete record.
+
+**Column**
+
+* One type of information.
+
+**Data Types**
+
+* INT → Numbers
+* VARCHAR → Text
+* DATE → Date
+* FLOAT → Decimal values
+
+**ER Diagram**
+
+* Used to design databases.
+
+**Entity**
+
+* Real-world object.
+  Example: Student
+
+**Attributes**
+
+* Properties of an entity.
+  Example: StudentID, Name
+
+**Relationship**
+
+* Connection between tables.
+  Example:
+  Student → Enrolls → Course
+
+### Practiced
+
+* Create 2 tables manually.
+* Identify Primary Key.
+* Draw one ER Diagram.
+
+---
+
+# 📅 Day 2 – CREATE TABLE & Constraints
+
+### Topics Covered
+
+* CREATE TABLE
+* INSERT
+* PRIMARY KEY
+* Constraints
+
+### Explanation
+
+Create table
+
+```sql
+CREATE TABLE Students(
+id INT PRIMARY KEY,
+name VARCHAR(50),
+age INT
+);
+```
+
+Insert
+
+```sql
+INSERT INTO Students
+VALUES(1,'Ravi',20);
+```
+
+Constraints
+
+* PRIMARY KEY
+* NOT NULL
+* UNIQUE
+* DEFAULT
+* CHECK
+
+Example
+
+```sql
+Age INT CHECK(Age>=18)
+```
+
+### Practiced
+
+* Create Employee table.
+* Insert 10 records.
+
+---
+
+# 📅 Day 3 – ALTER, UPDATE, DELETE
+
+### Topics Covered
+
+* ALTER TABLE
+* UPDATE
+* DELETE
+
+### Explanation
+
+Add column
+
+```sql
+ALTER TABLE Students
+ADD Email VARCHAR(50);
+```
+
+Update
+
+```sql
+UPDATE Students
+SET Age=22
+WHERE id=1;
+```
+
+Delete
+
+```sql
+DELETE FROM Students
+WHERE id=3;
+```
+
+Difference
+
+DELETE removes rows.
+
+ALTER changes table structure.
+
+---
+
+# 📅 Day 4 – SELECT Queries
+
+### Topics Covered
+
+* SELECT
+* DISTINCT
+* WHERE
+* BETWEEN
+
+### Explanation
+
+```sql
+SELECT * FROM Students;
+```
+
+Distinct
+
+```sql
+SELECT DISTINCT City
+FROM Students;
+```
+
+Where
+
+```sql
+SELECT *
+FROM Students
+WHERE Age>20;
+```
+
+Between
+
+```sql
+WHERE Age BETWEEN 18 AND 25;
+```
+
+---
+
+# 📅 Day 5 – Filtering Data
+
+### Topics Covered
+
+* AND
+* OR
+* LIKE
+* Wildcards
+
+### Explanation
+
+AND
+
+```sql
+WHERE Age>20
+AND City='Delhi';
+```
+
+OR
+
+```sql
+WHERE City='Delhi'
+OR City='Mumbai';
+```
+
+LIKE
+
+```sql
+WHERE Name LIKE 'A%'
+```
+
+Wildcards
+
+* % → Any characters
+* _ → One character
+
+---
+
+# 📅 Day 6 – Sorting & NULL
+
+### Topics Covered
+
+* ORDER BY
+* LIMIT
+* NULL
+
+Examples
+
+```sql
+ORDER BY Salary DESC;
+```
+
+```sql
+LIMIT 5;
+```
+
+```sql
+WHERE Email IS NULL;
+```
+
+```sql
+WHERE Email IS NOT NULL;
+```
+
+---
+
+# 📅 Day 7 – Aggregate Functions
+
+Topics
+
+* COUNT()
+* SUM()
+* AVG()
+* MAX()
+* MIN()
+
+Example
+
+```sql
+SELECT COUNT(*)
+FROM Employees;
+```
+
+```sql
+SELECT AVG(Salary)
+FROM Employees;
+```
+
+---
+
+# 📅 Day 8 – GROUP BY & HAVING
+
+### GROUP BY
+
+Groups rows.
+
+```sql
+SELECT Department,
+COUNT(*)
+FROM Employees
+GROUP BY Department;
+```
+
+### HAVING
+
+Filters groups.
+
+```sql
+SELECT Department,
+AVG(Salary)
+FROM Employees
+GROUP BY Department
+HAVING AVG(Salary)>50000;
+```
+
+Difference
+
+WHERE → Before grouping
+
+HAVING → After grouping
+
+---
+
+# 📅 Day 9 – Column Functions
+
+Topics
+
+* AS
+* ROUND()
+
+Example
+
+```sql
+SELECT Salary AS Income
+FROM Employees;
+```
+
+```sql
+SELECT ROUND(AVG(Salary),2)
+FROM Employees;
+```
+
+---
+
+# 📅 Day 10 – Date Functions
+
+Topics
+
+* DATE()
+* CURRENT_DATE
+* CURRENT_TIMESTAMP
+* strftime()
+* julianday()
+
+Example
+
+```sql
+SELECT CURRENT_DATE;
+```
+
+```sql
+SELECT strftime('%Y',DOB)
+FROM Students;
+```
+
+---
+
+# 📅 Day 11 – Transactions
+
+Topics
+
+* BEGIN
+* COMMIT
+* ROLLBACK
+
+Example
+
+```sql
+BEGIN;
+
+UPDATE Accounts
+SET Balance=Balance-500
+WHERE id=1;
+
+COMMIT;
+```
+
+Rollback
+
+```sql
+ROLLBACK;
+```
+
+---
+
+# 📅 Day 12 – ACID Properties
+
+Topics
+
+* Atomicity
+* Consistency
+* Isolation
+* Durability
+
+Simple meanings
+
+Atomicity → All or Nothing
+
+Consistency → Data remains valid
+
+Isolation → Transactions don't interfere
+
+Durability → Saved permanently
+
+---
+
+# 📅 Day 13 – Locking & Deadlock
+
+Topics
+
+* Shared Lock
+* Exclusive Lock
+* Deadlock
+
+Example
+
+Transaction A waits for B
+
+Transaction B waits for A
+
+Both stop.
+
+---
+
+# 📅 Day 14 – Retail Store Project Revision
+
+Revised
+
+* Tables
+* Insert
+* Update
+* Delete
+* Aggregates
+* Date Functions
+
+Practiced
+
+Write 15 queries without looking at notes.
+
+---
+
+# 📅 Day 15 – School Database Project
+
+Practiced
+
+* Student queries
+* Teacher queries
+* Salary queries
+* Rollback
+* Update
+
+---
+
+# 📅 Day 16 – Mixed Query Practice
+
+Practiced
+
+* SELECT
+* WHERE
+* LIKE
+* ORDER BY
+* LIMIT
+* GROUP BY
+* HAVING
+
+Solve **25 questions**.
+
+---
+
+# 📅 Day 17 – Debugging SQL
+
+Practiced
+
+* Missing WHERE
+* Wrong GROUP BY
+* Wrong HAVING
+* Wrong ORDER BY
+* Missing PRIMARY KEY
+* Incorrect INSERT syntax
+
+Correct **20 SQL queries**.
+
+---
+
+# 📅 Day 18 – Mock Test
+
+Attempt without notes:
+
+* 10 Basic queries
+* 10 Aggregate queries
+* 10 GROUP BY/HAVING queries
+* 10 Transactions questions
+
+Time limit: **90 minutes**.
+
+---
+
+# 📅 Day 19 – Final Revision
+
+Revise all important topics:
+
+* SQL Basics
+* CREATE, INSERT, UPDATE, DELETE
+* Constraints
+* SELECT
+* WHERE
+* DISTINCT
+* LIKE
+* BETWEEN
+* ORDER BY
+* LIMIT
+* NULL
+* Aggregate Functions
+* GROUP BY
+* HAVING
+* Date Functions
+* Transactions
+* ACID
+* Locking
+* Deadlocks
+* Retail Store Project
+* School Database Project
+
+### Final Practiced Checklist
+
+* ✅ Create a database from scratch.
+* ✅ Create tables with constraints.
+* ✅ Insert sample data.
+* ✅ Write CRUD queries (Create, Read, Update, Delete).
+* ✅ Practice filtering (`WHERE`, `LIKE`, `BETWEEN`).
+* ✅ Use aggregate functions and grouping.
+* ✅ Perform transactions (`BEGIN`, `COMMIT`, `ROLLBACK`).
+* ✅ Solve at least **50 mixed SQL questions**.

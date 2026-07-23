@@ -1,0 +1,324 @@
+
+📅 Day 1 – Cinema Hall Case Study (Part 1)
+Topics Covered
+Database schema
+Tables and relationships
+Basic SELECT
+WHERE
+ORDER BY
+Brief Explanation
+
+The Cinema Hall database stores information about:
+
+Movies
+Customers
+Bookings
+Screens
+Show timings
+
+Understand how these tables are connected.
+
+Example:
+
+SELECT movie_name
+FROM Movies;
+
+Returns all movie names.
+
+Practiced
+Revise all MCQs.
+Solve Query 1–6 without notes.
+📅 Day 2 – Cinema Hall Case Study (Part 2)
+Topics Covered
+Aggregate functions
+GROUP BY
+HAVING
+Booking analysis
+Brief Explanation
+
+GROUP BY
+Groups rows having the same value.
+
+SELECT movie_name, COUNT(*)
+FROM Bookings
+GROUP BY movie_name;
+
+HAVING
+Filters grouped data.
+
+SELECT movie_name, COUNT(*)
+FROM Bookings
+GROUP BY movie_name
+HAVING COUNT(*) > 10;
+Practice
+Revise Queries 7–12.
+Practiced all rearrange code questions.
+📅 Day 3 – Online Education Courses (Part 1)
+Topics Covered
+Courses
+Instructors
+Subscribers
+Joins
+Brief Explanation
+
+Tables are related using foreign keys.
+
+Example:
+
+SELECT course_name, instructor_name
+FROM Courses
+JOIN Instructors
+ON Courses.instructor_id = Instructors.instructor_id;
+Practiced
+Revise MCQs.
+Solve Queries 1–6.
+📅 Day 4 – Online Education Courses (Part 2)
+Topics Covered
+Course popularity
+Subscriber analysis
+Aggregate functions
+Example
+SELECT course_name,
+COUNT(subscriber_id)
+FROM Subscribers
+GROUP BY course_name;
+Practiced
+Queries 7–12.
+Rearrange questions.
+📅 Day 5 – Fantasy Role Playing Game (Part 1)
+Topics Covered
+Characters
+Weapons
+Levels
+Races
+Example
+SELECT character_name
+FROM Characters
+WHERE level > 20;
+Practice
+MCQs
+Queries 1–6
+📅 Day 6 – Fantasy Role Playing Game (Part 2)
+Topics Covered
+Ranking
+Aggregates
+Sorting
+
+Example
+
+SELECT race,
+COUNT(*)
+FROM Characters
+GROUP BY race;
+Practice
+Queries 7–12
+Rearrange code
+📅 Day 7 – Company Recession (Part 1)
+Topics Covered
+Company details
+Revenue
+Headquarters
+Employees
+Example
+SELECT company_name
+FROM Companies
+WHERE revenue > 500000;
+Practice
+MCQs
+Queries 1–6
+📅 Day 8 – Company Recession (Part 2)
+Topics Covered
+Financial analysis
+Grouping
+Ranking
+
+Example
+
+SELECT sector,
+AVG(revenue)
+FROM Companies
+GROUP BY sector;
+Practice
+Queries 7–12
+📅 Day 9 – E-commerce Sales Analysis (Part 1)
+Topics Covered
+Customers
+Products
+Orders
+Sales
+Example
+SELECT *
+FROM Orders
+WHERE order_status='Delivered';
+Practice
+MCQs
+Queries 1–4
+📅 Day 10 – E-commerce Sales Analysis (Part 2)
+Topics Covered
+Revenue analysis
+Customer spending
+Product performance
+
+Example
+
+SELECT customer_id,
+SUM(amount)
+FROM Orders
+GROUP BY customer_id;
+Practice
+Queries 5–8
+📅 Day 11 – E-commerce Sales Analysis (Part 3)
+Topics Covered
+Hard SQL queries
+Nested queries
+Complex filtering
+
+Example
+
+SELECT product_name
+FROM Products
+WHERE price >
+(
+SELECT AVG(price)
+FROM Products
+);
+Practiced
+Queries 9–12
+Rearrange questions
+📅 Day 12 – Music App Case Study (Part 1)
+Topics Covered
+Songs
+Albums
+Artists
+Users
+Example
+SELECT song_name
+FROM Songs;
+Practice
+Complete MCQs 1–8
+📅 Day 13 – Music App Case Study (Part 2)
+Topics Covered
+Playlists
+Listening history
+Joins
+
+Example
+
+SELECT user_name,
+song_name
+FROM Users
+JOIN ListeningHistory
+ON Users.user_id = ListeningHistory.user_id;
+Practice
+MCQs 9–15
+Rearrange code
+📅 Day 14 – Music App Case Study (Part 3)
+Topics Covered
+Analytics
+Aggregate functions
+Hard queries
+
+Example
+
+SELECT artist_name,
+COUNT(song_id)
+FROM Songs
+GROUP BY artist_name;
+Practiced
+Queries 1–12
+📅 Day 15 – JOIN Revision
+Topics Covered
+INNER JOIN
+LEFT JOIN
+RIGHT JOIN
+FULL JOIN
+SELF JOIN
+Simple Explanation
+
+INNER JOIN → Matching records only.
+
+SELECT *
+FROM Students
+INNER JOIN Courses
+ON Students.course_id = Courses.course_id;
+
+LEFT JOIN → All rows from the left table and matching rows from the right.
+
+SELECT *
+FROM Students
+LEFT JOIN Courses
+ON Students.course_id = Courses.course_id;
+📅 Day 16 – Subqueries & Advanced SQL
+Topics Covered
+Subqueries
+Nested queries
+IN
+EXISTS
+ANY
+ALL
+
+Example
+
+SELECT name
+FROM Employees
+WHERE salary >
+(
+SELECT AVG(salary)
+FROM Employees
+);
+📅 Day 17 – Debugging & Rearrange Questions
+Practice
+Solve all rearrange code questions.
+Correct 25 incorrect SQL queries.
+
+Focus on:
+
+Missing WHERE
+Incorrect GROUP BY
+Wrong JOIN
+Syntax mistakes
+📅 Day 18 – Mock Test
+
+Attempt without notes:
+
+15 MCQs
+10 Rearrange questions
+15 SQL Queries
+
+Time limit: 2 hours.
+
+After the test, review every incorrect answer and understand why it was wrong.
+
+📅 Day 19 – Final Revision
+Revise All Case Studies
+✅ Cinema Hall
+✅ Online Education Courses
+✅ Fantasy Role Playing Game
+✅ Company Recession
+✅ Sales Analysis of E-commerce Platform
+✅ Music App
+Important SQL Topics
+SELECT
+WHERE
+ORDER BY
+LIMIT
+DISTINCT
+LIKE
+BETWEEN
+Aggregate functions (COUNT, SUM, AVG, MAX, MIN)
+GROUP BY
+HAVING
+INNER JOIN
+LEFT JOIN
+RIGHT JOIN
+FULL JOIN
+SELF JOIN
+Subqueries (IN, EXISTS, ANY, ALL)
+Date functions
+CASE statements
+UNION and UNION ALL
+Transactions (BEGIN, COMMIT, ROLLBACK)
+ Practiced Checklist
+✅ Revised all completed case studies.
+✅ Finished the Music App case study (currently 0%).
+✅ Completed the remaining E-commerce case study problems (currently 66%).
